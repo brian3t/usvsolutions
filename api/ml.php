@@ -5,8 +5,8 @@ header('Content-Type: application/json');
 
 
 extract($_POST);
-if (!isset($from) || !isset($message)) {
-    echo json_encode(['status' => 'failed', 'error' => 'Missing from or message']);
+if (!isset($from) || !isset($message) || !isset($key) || ($key !== 'f>6Ea@/N7e')) {
+    echo json_encode(['status' => 'failed', 'error' => 'Missing from or message or wrong key']);
     exit();
 }
 
