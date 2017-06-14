@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="f056096b-04e9-4b6a-a52f-468ab8f1b693" name="usv" url="http://usvsolutions.com">
+        <fileTransfer host="usvsolutions.com" port="21" rootFolder="/usv">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
