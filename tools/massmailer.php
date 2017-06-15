@@ -5,8 +5,7 @@ $company_name = "Comp name";
 $road_name = "Dandridge Ln";
 $note = "PS Brian is cool";
 
-$headers = 'From:support@leadfollowapp.com' . "\r\n" .
-
+$headers = 'From:support@leadfollowapp.com';
 $message = "Hello $name,
 
 My name is Brian and I am Chief Technology Officer of LeadFollow App Pte. Ltd. I found out about $company_name via YellowPage.
@@ -27,4 +26,4 @@ CTO, Lead Follow App Pte. Ltd.
 https://leadfollowapp.com 
 559 347 4767";
 
-echo mail('ngxtri@gmail.com', 'Hello from LeadFollow App', $message);
+echo mail('ngxtri@gmail.com', 'Hello from LeadFollow App', $message, $headers);
