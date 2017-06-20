@@ -1,7 +1,9 @@
 <?php
+//define('IS_DEBUG', true);
+define('IS_DEBUG', false);
 
 $catalog = [];
-$f = fopen(dirname(__DIR__) . "/tmp/input/sandiego_businesses.csv", "r");
+$f = fopen(dirname(__DIR__) . "/tmp/input/sandiego_businesses2.csv", "r");
 while ($catalog[] = fgetcsv($f)) {
 
 }
@@ -11,11 +13,17 @@ array_shift($catalog);// Name	Email	Road name	Business Name	Note
 $catalog = array_slice($catalog, 1);
 $headers = 'From:support@leadfollowapp.com';
 
+if (IS_DEBUG) {
+    $catalog = array_slice($catalog, 0, 1);
+}
 foreach ($catalog as $company) {
-    list($name, $email, $road_name, $company_name, $note) = $company;
+    list($name, $email, $road_name, $company_name, $note, $website) = $company;
+    if (IS_DEBUG) {
+        $email = 'ngxtri@gmail.com';
+    }
     $message = "Hello $name,
 
-My name is Brian and I am Chief Technology Officer of LeadFollow App Pte. Ltd. I found out about $company_name via YellowPage.
+My name is Brian and I am Chief Technology Officer of LeadFollow App Pte. Ltd. I found out about $company_name via LinkedIn.
 
 We are a startup built by MIT students in 2015. Most of our clients are real estate agents from REMax. Our main office is in Boston, and we just expanded to beautiful San Diego. Our app helps you follow up with house buyers 24/7, using real people with the help of artificial intelligence. You can find out more at https://leadfollowapp.com and on San Diego Tribune magazine, Sunday March 13, 2017 issue. LeadFollowApp is free with basic features, and you can upgrade to premium subscription when you see fit.
 
@@ -30,7 +38,7 @@ $note
 With best regards,
 Brian Nguyen
 CTO, Lead Follow App Pte. Ltd.
-5995 Dandridge Ln, San Diego, CA 92115
+5995 Dandridge Lane, San Diego, CA 92115
 https://leadfollowapp.com 
 559 347 4767";
 
