@@ -14,26 +14,28 @@ echo '<?xml version="1.0" encoding="'.get_option('blog_charset').'"?'.'>';
 do_action( 'rss_tag_pre', 'rdf' );
 ?>
 <rdf:RDF
-	xmlns="http://purl.org/rss/1.0/"
-	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-	xmlns:dc="http://purl.org/dc/elements/1.1/"
-	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
-	xmlns:admin="http://webns.net/mvcb/"
-	xmlns:content="http://purl.org/rss/1.0/modules/content/"
-	<?php
-	/**
-	 * Fires at the end of the feed root to add namespaces.
-	 *
-	 * @since 2.0.0
-	 */
-	do_action( 'rdf_ns' );
-	?>
+        xmlns="http://purl.org/rss/1.0/"
+        xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+        xmlns:dc="http://purl.org/dc/elements/1.1/"
+        xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+        xmlns:content="http://purl.org/rss/1.0/modules/content/"
+    <?php
+    /**
+     * Fires at the end of the feed root to add namespaces.
+     *
+     * @since 2.0.0
+     */
+    do_action('rdf_ns');
+    ?>
 >
 <channel rdf:about="<?php bloginfo_rss("url") ?>">
-	<title><?php bloginfo_rss('name'); wp_title_rss(); ?></title>
+	<title><?php wp_title_rss(); ?></title>
 	<link><?php bloginfo_rss('url') ?></link>
 	<description><?php bloginfo_rss('description') ?></description>
-	<dc:date><?php echo mysql2date('Y-m-d\TH:i:s\Z', get_lastpostmodified('GMT'), false); ?></dc:date>
+	<dc:date><?php
+		$date = get_lastpostmodified( 'GMT' );
+		echo $date ? mysql2date( 'Y-m-d\TH:i:s\Z', $date ) : date( 'Y-m-d\TH:i:s\Z' );
+	?></dc:date>
 	<sy:updatePeriod><?php
 		/** This filter is documented in wp-includes/feed-rss2.php */
 		echo apply_filters( 'rss_update_period', 'hourly' );
