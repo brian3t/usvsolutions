@@ -6,9 +6,12 @@
 			<?php wp_nav_menu( array( 'container' => '', 'theme_location' => 'footer', 'menu' => 'footer', 'fallback_cb' => 'footer_nav_fb', 'depth' => 1 ) ); ?>
 		</div>
 		
-		<div id="copyright"><?php echo stripslashes( theme_options('footer', 'footer_copyright_text') ); ?></div>	
+		<div id="copyright"><?php echo stripslashes( theme_options('footer', 'footer_copyright_text') ); ?></div>
+		<div><script language="JavaScript" type="text/javascript">
+TrustLogo("http://usvsolutions.com/img/comodo_secure_seal_113x59_transp.png", "CL1", "none");
+</script>
+<a  href="https://www.positivessl.com/" id="comodoTL">Positive SSL</a>	</div>	
 	</div><!-- #footer-content -->
-	
 </footer>
 
 <?php if( theme_options('advance', 'show_customize') == 'on' ) get_template_part('section', 'customize'); ?>
