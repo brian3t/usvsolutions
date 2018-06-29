@@ -2,7 +2,8 @@
 <html <?php language_attributes(); ?> class="no-js">
 <head>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin">
-	<script type="text/javascript"> //<![CDATA[
+    <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+    <script type="text/javascript"> //<![CDATA[
 var tlJsHost = ((window.location.protocol == "https:") ? "https://secure.comodo.com/" : "http://www.trustlogo.com/");
 document.write(unescape("%3Cscript src='" + tlJsHost + "trustlogo/javascript/trustlogo.js' type='text/javascript'%3E%3C/script%3E"));
 //]]>

@@ -70,10 +70,6 @@
 		background-color: <?php echo theme_options('appearance', 'site_bg_color'); ?>;
 		background-image: url(<?php echo theme_get_attachment_src( theme_options('appearance', 'site_bg_image') ); ?>);
 	}
-	#pattern {
-		background-image: url(<?php echo THEME_URI; ?>/images/pattern/<?php echo theme_options('appearance', 'site_bg_pattern'); ?>);
-	}
-	
 	/* Table */
 	<?php if( theme_options( 'appearance', 'table_show' ) == 'on' ): ?>
 		#table-top,

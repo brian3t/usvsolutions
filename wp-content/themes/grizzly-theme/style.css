@@ -8,8 +8,19 @@ Version:        3.0.4
 License: 		GNU General Public License
 License URI: 	license.txt
 */
-#primary-menu-container {display:none;}
-h2.section-title.section-title-center.section-lined,.wf-active #site-title-text,.wf-active #page-title,.wf-active #apps-title,.wf-active .slide-caption-headline,.wf-active .rtf h1,.wf-active .rtf h2,.wf-active .rtf h3,.wf-active .rtf h4,.wf-active .rtf h5,.wf-active .rtf h {
+#primary-menu-container {
+    display: none;
+}
+h2.section-title.section-title-center.section-lined, .wf-active #site-title-text, .wf-active #page-title, .wf-active #apps-title, .wf-active .slide-caption-headline, .wf-active .rtf h1, .wf-active .rtf h2, .wf-active .rtf h3, .wf-active .rtf h4, .wf-active .rtf h5, .wf-active .rtf h {
     font-family: "Cabin";
     visibility: visible;
+}
+#show-space, #inner-page-show-space {
+    background-color: #ffa800;
+}
+#pattern {
+    background-image: url('/wp-content/themes/grizzly-theme/images/pattern/mosaic-1.png');
+}
+#table-mat-body-wrap-outer, #table-mat-top-wrap {
+    display: none
 }

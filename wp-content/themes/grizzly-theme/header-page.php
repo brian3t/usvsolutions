@@ -85,9 +85,6 @@
 		$bg_color
 		$bg_image
 	}
-	#pattern {
-		$bg_pattern
-	}
 </style>
 EOT;
 		?>

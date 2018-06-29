@@ -259,7 +259,10 @@ header {
 }
 .header-dark #site-title a,
 .header-dark #site-description {
-	color: #FAFAFA;
+	color: black;
+	font-family: 'Righteous', cursive;
+	text-transform: uppercase;
+	background-color: white;
 }
 #site-description {
 	display: none;
@@ -760,6 +763,10 @@ footer .sidebar-list .widget {
 #table-top {
 	background-position: center 0;
 }
+ #table-top, #table-border {
+	 background-color:#871500;
+	 background-image: url(/wp-content/themes/grizzly-theme/images/pattern/table/wood.png);
+ }
 #table-top-shadow {
 	background: url(../images/table-top-shadow.png) left bottom repeat-x;
 	height: 60px;
@@ -2563,12 +2570,11 @@ footer .widget_flickr .flickr_badge_image img {
 /* SHADOW */
 .shadow {
 	position: absolute;
-	bottom: 0;
+	bottom: -4px;
 	left: 0;
 	width: 100%;
 	height: 11px;
 	z-index: -1;
-	visibility: hidden;
 }
 .shadow-left {
 	background: url(../images/shadow-left.png) no-repeat left center;
