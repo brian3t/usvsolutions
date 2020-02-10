@@ -157,7 +157,7 @@ jQuery(document).ready(function($) {
 	// ---------------------------------------
 	function base_elastic() {
 
-		 $('.theme-gallery').flexslider({
+		/* $('.theme-gallery').flexslider({
 		    animation: "slide",
 		    animationLoop: false,
 		    itemWidth: 210,
@@ -165,7 +165,7 @@ jQuery(document).ready(function($) {
 		    minItems: 2,
 		    maxItems: 5,
 		    controlNav: false,
-		  });
+		  });*/
 	}
 
 	// ---------------------------------------

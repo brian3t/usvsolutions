@@ -2729,6 +2729,7 @@ footer .widget_flickr .flickr_badge_image img {
 
 
 /* Slides */
+/*
 .flexslider {
 	padding: 0;
 	border: 0;
@@ -2744,6 +2745,7 @@ footer .widget_flickr .flickr_badge_image img {
 }
 .flexslider:hover .flex-next {opacity: 0.8; right: 15px;}
 .flexslider:hover .flex-prev {opacity: 0.8; left: 15px;}
+*/
 
 
 /* Retina */

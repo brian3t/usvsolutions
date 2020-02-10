@@ -8,7 +8,7 @@
 		
 		<div id="copyright"><?php echo stripslashes( theme_options('footer', 'footer_copyright_text') ); ?></div>
 		<div><script language="JavaScript" type="text/javascript">
-TrustLogo("http://usvsolutions.com/img/comodo_secure_seal_113x59_transp.png", "CL1", "none");
+TrustLogo("//usvsolutions.com/img/comodo_secure_seal_113x59_transp.png", "CL1", "none");
 </script>
 <a  href="https://www.positivessl.com/" id="comodoTL">Positive SSL</a>	</div>	
 	</div><!-- #footer-content -->

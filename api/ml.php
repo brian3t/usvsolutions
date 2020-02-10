@@ -13,7 +13,8 @@ if(!isset($from) || !isset($message) || !isset($key) || ($key!=='f>6Ea@/N7e'))
 if (!isset($name)){
     $name = '';
 }
-if(mail('ngxtri@gmail.com',"Mail from api, name:  $name" . $_SERVER['REMOTE_ADDR'] . " " . $_SERVER['HTTP_HOST'],$message))
+/*if(mail('ngxtri@gmail.com',"Mail from api, name:  $name" . $_SERVER['REMOTE_ADDR'] . " " . $_SERVER['HTTP_HOST'],$message))
 {
     echo json_encode(['status' => 'ok']);
 }
+*/

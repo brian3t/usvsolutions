@@ -3,8 +3,13 @@ capo_html
 favicon.ico
 forum
 iecom
+iecomadmin
+lib
+mbtestapp
 img
 mwcog
+pflow
+pledge
 *.log
 wp-content/backup-db/
 wp-content/backups/

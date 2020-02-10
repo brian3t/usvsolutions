@@ -1,0 +1,715 @@
+body {
+	font-family: mic-32-new-web, sans-serif;
+	margin:0;
+	padding: 0;
+	color: #000;
+	font-size: 18px;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+.clear {
+	clear: both;
+}
+
+.container {
+	width: 100%;
+	max-width: 1100px;
+	margin: 0 auto;
+	padding: 0 24px;
+}
+
+.p28 {
+	font-size: 28px;
+}
+
+
+
+/* ==================================*/
+/*  STICKY NAV BAR  */
+
+.rsw-topbar {
+	background-color: #003595;
+	padding: 0;
+	position: fixed;
+    width: 100%;
+    height: 116px;
+    z-index: 99;
+}
+
+.rsw-topbar-container {
+	width: 100%;
+	max-width: 1100px;
+	margin: 0 auto;
+}
+
+.rsw-topbar .iec-logo {
+	float: left;
+	margin: 20px 0 20px 20px;
+}
+
+.rsw-topbar .iec-logo img {
+    width: 315px;
+    height: auto;
+}
+
+.rsw-topbar .mobile-menu {
+	display: none;
+}
+
+
+
+.rsw-topbar .nav {
+	float: right;
+	height: 20px;
+	margin: 48px 10px 48px 0;
+}
+
+.rsw-topbar .nav ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.rsw-topbar .nav li {
+	display: inline-block;
+	margin: 0 14px;
+}
+
+.rsw-topbar .nav a {
+	color: #fff;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.rsw-topbar .nav a:hover {
+	text-decoration: underline;
+}
+
+
+
+/* TOPBAR SHRINK ON SCROLL */
+
+.rsw-topbar.shrink {
+    height: 90px;
+}
+
+.rsw-topbar.shrink .iec-logo img {
+	width: 220px;
+	height: auto;
+}
+
+.rsw-topbar.shrink .nav {
+	height: 20px;
+	margin: 35px 10px 35px 0;
+}
+
+
+
+/* ==================================*/
+/*  HERO ANIMATION  */
+
+.rsw-hero-container {
+	background-color: #C0D430;
+}
+
+.rsw-hero {
+	width: 100%;
+	max-width: 1100px;
+	margin: 0 auto;
+	padding-top: 116px;
+}
+
+#animation_container {
+	position:absolute;
+	margin:auto;
+	left:0;right:0;
+}
+
+img.hero-spacer {
+	width: 100%;
+	display: block;
+}
+
+#hero-mobile {
+	cursor: pointer;
+	width: 100%;
+}
+
+
+
+/* ==================================*/
+/*  INTRO AND PLEDGE AREA  */
+
+.rsw-intro {
+	background-color: #fff;
+	text-align: center;
+}
+
+
+.rsw-intro p.intro {
+	font-size: 36px;
+	font-weight: 600;
+}
+
+.rsw-intro h2 {
+	color: #C0D430;
+	font-size: 56px;
+	font-weight: 700;
+	letter-spacing: -1px;
+}
+
+.cta-pledge {
+
+}
+
+.cta-pledge div {
+	display: inline-block;
+	margin: 20px 6px 0 6px;
+}
+
+.cta-pledge img {
+	cursor: pointer;
+}
+
+
+
+
+
+/* ==================================*/
+/*  MODE ILLUSTRATIONS  */
+
+.modes-desktop {
+	position: relative;
+	max-width: 1100px;
+	margin: 40px auto;
+	padding: 20px 0;
+	background-color: #F1F4CE;
+	z-index: 9;
+}
+
+img#modes {
+	width: 100%;
+	height: auto;
+}
+
+.modes-mobile {
+	display: none;
+}
+
+
+
+
+/* ==================================*/
+/*  PRIZES AND SPONSORS  */
+
+.lower-bg {
+	background-color: #C0D430;
+	z-index: 0;
+	margin-top: -200px;
+	/*height: 600px;*/
+}
+
+.container.lower {
+	padding-top: 220px;
+}
+
+.section-headline {
+	text-align: center;
+	width: 96%;
+	margin: 0 auto;
+	background-color: #EBF0B8;
+	-webkit-border-radius: 100px;
+	-moz-border-radius: 100px;
+	border-radius: 100px;
+}
+
+.lower h3 {
+	font-size: 44px;
+	line-height: 72px;
+	letter-spacing: -1px;
+	margin: 0;
+}
+
+
+.prize-list {
+	margin-top: 36px;
+	display: flex;
+	justify-content: center;
+}
+
+.prize-list div	{
+	min-width: 320px;
+	text-align: center;
+	margin: 0 10px;
+}
+
+
+
+.sponsors {
+	background-color: #fff;
+	margin-top: 50px;
+	padding: 40px 20px;
+}
+
+.sponsors .section-headline {
+	margin-top: 30px;
+}
+
+.plat-sponsors {
+	display: flex;
+	justify-content: center;
+	padding: 20px 0;
+}
+
+.plat-sponsors img {
+	width: 100%;
+	max-width: 346px;
+	min-width: 180px;
+}
+
+.prem-sponsors {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	padding: 20px 0;
+}
+
+.prem-sponsors div {
+	width: 30%;
+	max-width: 300px;
+	min-width: 124px;
+}
+
+.prem-sponsors img {
+	width: 100%;
+}
+
+.del-sponsors {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	padding: 20px 0;
+}
+
+.del-sponsors div {
+	width: 30%;
+	max-width: 230px;
+	min-width: 124px;
+}
+
+.del-sponsors img {
+	width: 100%;
+}
+
+
+
+.add-sponsors {
+	display: flex;
+	justify-content: center;
+	padding: 20px 20px 0 20px;
+}
+
+
+
+
+
+.rsw-bottom {
+	text-align: center;
+	padding: 40px 0;
+}
+
+.rsw-bottom .legal {
+	max-width: 800px;
+	margin: 15px auto 0 auto;
+}
+
+
+
+
+
+#footer {
+	background-color: #003595;
+}
+
+
+#footer div {
+	padding: 36px 15px;
+	text-align: center;
+}
+
+#footer .footnotes {
+	color: #fff;
+	
+	max-width: 1000px;
+	margin: auto;
+	padding: 36px 20px 0 20px;
+}
+
+.footnotes p {
+	font-size: 15px;
+}
+
+.footnotes a {
+	color: #fff;
+	text-decoration: underline;
+}
+
+
+
+a.social-media-footer:link, a.social-media-footer:visited {
+    color: #fff;
+    text-decoration: none;
+}
+
+
+
+
+
+
+/* ----------LOGIN OVERLAY-------------*/
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.66);
+  position: fixed;
+  /*overflow-y: scroll;*/
+  width: 100%;
+  height: 100%;
+  padding: 16px;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+.overlay.show-overlay {
+  opacity: 1;
+  z-index: 9999;
+}
+
+.overlay .overlay-content {
+  width: 100%;
+  max-width: 440px;
+  margin: 68px auto 0 auto;
+  background-color: #fff;
+  padding: 0;
+  text-align: center;
+}
+
+.overlay-hdr {
+	background-color: #003595;
+	display: flex;
+}
+
+.overlay-hdr .branding {
+	width: 80%;
+	padding: 15px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.branding img {
+	width: 100%;
+	max-width: 250px;
+}
+
+.overlay-ftr {
+	background-color: #003595;
+	text-align: center;
+	padding: 12px;
+}
+
+.overlay-ftr img {
+	width: 100%;
+	max-width: 246px;
+}
+
+.overlay .overlay-content .close {
+	width: 40%;
+  	text-align: right;
+  	padding: 15px;
+  	display: flex;
+  	flex-direction: column;
+  	justify-content: center;
+}
+
+
+.overlay .overlay-content .close img {
+	width: auto;
+  	cursor: pointer;
+}
+
+.overlay .overlay-content .field {
+  width: 100%;
+  max-width: 200px;
+  margin: 10px auto;
+}
+
+.overlay .overlay-content .field input {
+  width: 100%;
+  height: 28px;
+}
+
+.overlay .overlay-content .field input[type="submit"] {
+  border: none;
+  background-color: #1947ba;
+  color: #fff;
+  height: 36px;
+  border-radius: 6px;
+}
+
+#__lpform_userName_numspan, #__lpform_userName_icon, #__lpform_passWord_numspan, #__lpform_passWord_icon {
+	display: none !important;
+}
+
+
+
+
+
+
+
+
+
+
+/* ==================================*/
+/*  NAV BREAK POINT  */
+
+@media screen and (max-width: 920px) {
+
+	.rsw-topbar .nav {
+		float: none;
+		width: 100%;
+		height: auto;
+		clear: both;
+		background-color: #003595;
+		margin: 0;
+		padding: 20px;
+		display: none;
+	}
+
+	.rsw-topbar .mobile-menu {
+		float: right;
+		display: block;
+		margin: 38px 24px 0 0;
+	}
+
+	.rsw-topbar .nav li {
+		display: block;
+		width: 100%;
+		margin: 0;
+		text-align: center;
+		font-size: 20px;
+		line-height: 56px;
+		border-top: 1px solid #002A77;
+	}
+
+	.rsw-topbar .nav.show-nav {
+		display: block;
+	}
+
+	#menu-icon {
+		cursor: pointer;
+	}
+
+	#menu-close {
+		cursor: pointer;
+		display: none;
+	}
+
+
+	/* TOPBAR SHRINK ON SCROLL */
+
+	.rsw-topbar.shrink {
+	    height: 90px;
+	}
+
+	.rsw-topbar.shrink .iec-logo {
+		margin: 20px 0 0 20px;
+	}
+
+	.rsw-topbar.shrink .mobile-menu {
+		margin: 24px 24px 0 0;
+	}
+
+	.rsw-topbar.shrink .nav {
+		height: auto;
+		margin: 0 10px 0 0;
+	}
+
+}
+
+
+/* ==================================*/
+/*  MODE ILLUSTRATIONS  */
+
+@media screen and (max-width: 700px) {
+	.modes-desktop {
+		display:none;
+	}
+
+	.modes-mobile {
+		display:block;
+		position: relative;
+		width: 100%;
+		margin: 40px auto;
+		padding: 0;
+		/*z-index: 9;*/
+	}
+	.modes-mobile div img {
+		display: block;
+		width: 100%;
+		/*opacity: 0;
+		transition: opacity 0.25s;*/
+	}
+	.modes-mobile .bus {
+		background-image: url('../images/rsw-m-bus.png');
+		background-repeat:no-repeat;
+		background-size:contain;
+		background-position:center;
+	}
+	.mro {
+		opacity: 0;
+		transition: opacity 0.25s;
+	}
+	.modes-mobile .train {
+		background-image: url('../images/rsw-m-train.png');
+		background-repeat:no-repeat;
+		background-size:contain;
+		background-position:center;
+	}
+	.modes-mobile .van {
+		background-image: url('../images/rsw-m-van.png');
+		background-repeat:no-repeat;
+		background-size:contain;
+		background-position:center;
+	}
+	.modes-mobile .bike {
+		background-image: url('../images/rsw-m-bike.png');
+		background-repeat:no-repeat;
+		background-size:contain;
+		background-position:center;
+	}
+	.modes-mobile .walk {
+		background-image: url('../images/rsw-m-walk.png');
+		background-repeat:no-repeat;
+		background-size:contain;
+		background-position:center;
+	}
+
+	.fadeIn {
+		opacity: 1 !important;
+	}
+}
+
+
+
+
+
+
+@media screen and (max-width: 690px) {
+	.rsw-intro p.intro {
+	    font-size: 30px;
+	}
+
+	.rsw-intro h2 {
+	    font-size: 44px;
+	}
+
+	.prize-list {
+		margin-top: 36px;
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+	}
+
+	.prize-list div:nth-child(2) p:first-child {
+		margin-top: 0;
+	}
+
+	.p28 {
+		font-size: 22px;
+	}
+
+	.prize-list div	{
+		width: 100%;
+		margin: 0;
+	}
+}
+
+
+@media screen and (max-width: 600px) {
+	.add-sponsors {
+		flex-direction: column;
+	}
+
+	.add-sponsors ul {
+		margin: 0;
+	}
+
+	.lower h3 {
+	    font-size: 36px;
+	    line-height: 68px;
+	}
+}
+
+
+
+@media screen and (max-width: 490px) {
+
+	.rsw-topbar .iec-logo img {
+		width: 250px;
+		height: auto;
+	}
+
+	.rsw-topbar .iec-logo {
+		margin: 30px 0 0 20px;
+	}
+
+	.rsw-intro p.intro {
+	    font-size: 24px;
+	}
+
+	.rsw-intro h2 {
+	    font-size: 38px;
+	}
+
+	.p28 {
+		font-size: 18px;
+	}
+
+	.cta-pledge div {
+	    display: block;
+	    margin: 20px 0 0 0;
+	}
+
+	.plat-sponsors {
+		flex-direction: column;
+	}
+
+	.lower h3 {
+	    font-size: 32px;
+	    line-height: 68px;
+	}
+
+
+}
+
+
+@media screen and (max-width: 420px) {
+
+	.cta-pledge div img {
+	    width: 100%;
+	}
+
+	.lower h3 {
+	    font-size: 28px;
+	}
+
+	
+
+
+}

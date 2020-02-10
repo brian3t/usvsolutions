@@ -1,0 +1,43 @@
+/*
+ * The Typekit service used to deliver this font or fonts for use on websites
+ * is provided by Adobe and is subject to these Terms of Use
+ * http://www.adobe.com/products/eulas/tou_typekit. For font license
+ * information, see the list below.
+ *
+ * mic-32-new-web:
+ *   - http://typekit.com/eulas/00000000000000003b9afaef
+ *   - http://typekit.com/eulas/00000000000000003b9afaf0
+ *   - http://typekit.com/eulas/00000000000000003b9afaec
+ *   - http://typekit.com/eulas/00000000000000003b9afaeb
+ *
+ * © 2009-2018 Adobe Systems Incorporated. All Rights Reserved.
+ */
+/*{"last_published":"2018-08-10 21:50:16 UTC"}*/
+
+@import url("https://p.typekit.net/p.css?s=1&k=jtm7vqp&ht=tk&f=8448.8449.8454.8455&a=12868539&app=typekit&e=css");
+
+@font-face {
+font-family:"mic-32-new-web";
+src:url("https://use.typekit.net/af/aa7ccb/00000000000000003b9afaef/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("woff2"),url("https://use.typekit.net/af/aa7ccb/00000000000000003b9afaef/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("woff"),url("https://use.typekit.net/af/aa7ccb/00000000000000003b9afaef/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("opentype");
+font-style:normal;font-weight:700;
+}
+
+@font-face {
+font-family:"mic-32-new-web";
+src:url("https://use.typekit.net/af/79163a/00000000000000003b9afaf0/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i7&v=3") format("woff2"),url("https://use.typekit.net/af/79163a/00000000000000003b9afaf0/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i7&v=3") format("woff"),url("https://use.typekit.net/af/79163a/00000000000000003b9afaf0/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i7&v=3") format("opentype");
+font-style:italic;font-weight:700;
+}
+
+@font-face {
+font-family:"mic-32-new-web";
+src:url("https://use.typekit.net/af/ce8ca6/00000000000000003b9afaec/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff2"),url("https://use.typekit.net/af/ce8ca6/00000000000000003b9afaec/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff"),url("https://use.typekit.net/af/ce8ca6/00000000000000003b9afaec/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("opentype");
+font-style:normal;font-weight:400;
+}
+
+@font-face {
+font-family:"mic-32-new-web";
+src:url("https://use.typekit.net/af/a6b863/00000000000000003b9afaeb/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3") format("woff2"),url("https://use.typekit.net/af/a6b863/00000000000000003b9afaeb/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3") format("woff"),url("https://use.typekit.net/af/a6b863/00000000000000003b9afaeb/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3") format("opentype");
+font-style:italic;font-weight:400;
+}
+
+.tk-mic-32-new-web { font-family: "mic-32-new-web",sans-serif; }
