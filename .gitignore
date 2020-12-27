@@ -1,4 +1,5 @@
 formulary_api
+./lot/*
 capo_html
 favicon.ico
 forum
@@ -21,4 +22,4 @@ wp-content/mu-plugins/
 wp-content/plugins/hello.php
 .well-known
 tmp
-
+.idea/workspace.xml
