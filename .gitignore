@@ -23,3 +23,5 @@ wp-content/plugins/hello.php
 .well-known
 tmp
 .idea/workspace.xml
+.idea/*.*
+/lottery/
