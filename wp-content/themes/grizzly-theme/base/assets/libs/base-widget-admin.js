@@ -1,12 +1,12 @@
 jQuery(document).ready(function($) {
-	
+
 	// Color
 	$(".input-color").mColorPicker({
 		imageFolder : theme_admin_assets_uri+"/images/mColorPicker/"
 	});
-	
+
 	// Ads 125
-	$('.ads-count').live('change',function(){
+	$('.ads-count').on('change',function(){
 		var cur_widget = $(this).parents('.widget');
 		var count = $(this).val();
 		$('.ads-info', cur_widget).hide();
@@ -14,9 +14,9 @@ jQuery(document).ready(function($) {
 			$('#ads-info-'+i, cur_widget).show();
 		}
 	});
-	
+
 	// Social
-	$('.social-icon-sites').live('change',function(){
+	$('.social-icon-sites').on('change',function(){
 		var cur_widget = $(this).parents('.widget');
 		var sites = $(this).val();
 		$('.social-icon-config', cur_widget).hide();
@@ -24,5 +24,5 @@ jQuery(document).ready(function($) {
 			$('#social-icon-'+sites[i], cur_widget).show();
 		}
 	});
-	
+
 });

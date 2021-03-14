@@ -1,6 +1,6 @@
-<?php 
+<?php
 if( !isset( $image_slide_type ) )
-$image_slide_type = ( theme_options( 'home', 'img_slide_full_frame' ) == 'on' ) ? 'image-slide image-slide-full-frame' : 'image-slide'; 
+$image_slide_type = ( theme_options( 'home', 'img_slide_full_frame' ) == 'on' ) ? 'image-slide image-slide-full-frame' : 'image-slide';
 
 ?>
 
@@ -12,21 +12,21 @@ $image_slide_type = ( theme_options( 'home', 'img_slide_full_frame' ) == 'on' ) 
 	$img_slide_effect_direction = $img_slide_effect . '-' . $img_slide_direction;
 
 	$img_slide_auto = ( theme_options( 'home', 'img_slide_auto' ) != 'off' ) ? 'true' : 'false';
-	
+
 	$img_slide_pause = theme_options( 'home', 'img_slide_pause' ) * 1000;
 	$img_slide_animate_speed = theme_options( 'home', 'img_slide_animate_speed' ) * 1000;
-	
+
 	$img_slide_height = theme_options( 'home', 'img_slide_height' );
-	
+
 	$sitewide_caption_title_bg_color = theme_options( 'home', 'img_slide_caption_title_bg_color' );
 	$sitewide_caption_title_text_color = theme_options( 'home', 'img_slide_caption_title_text_color' );
-	
+
 	$slides = get_posts( array( 'post_type' => 'slide', 'numberposts' => -1, 'orderby' => 'menu_order', 'order' => 'ASC', 'suppress_filters' => 0 ) );
 ?>
 
 <!-- Home Slide Style -->
 <style type="text/css" scoped>
-	
+
 	.slide-caption-headline {
 		background-color: <?php echo $sitewide_caption_title_bg_color; ?>;
 	}
@@ -34,7 +34,7 @@ $image_slide_type = ( theme_options( 'home', 'img_slide_full_frame' ) == 'on' ) 
 	.slide-caption-headline a {
 		color: <?php echo $sitewide_caption_title_text_color; ?>;
 	}
-	
+
 </style>
 <!-- End - Home Slide Style -->
 
@@ -42,24 +42,20 @@ $image_slide_type = ( theme_options( 'home', 'img_slide_full_frame' ) == 'on' ) 
 
 <!-- Home Slide JS -->
 <script type="text/javascript">
-//<![CDATA[ 
+//<![CDATA[
 	jQuery(document).ready(function($) {
-		
+
 		// Define Easing
 		jQuery.easing.def = 'easeOutQuad';
 
 		// Show Slide Box after Loaded
-		if ( !$.browser.msie ){
 			var slide_imgs_load = $('#home-slide-wrapper').imagesLoaded();
 			slide_imgs_load.always( function( $images ){
 			  $('#home-slide-wrapper').animate({
 			  	opacity: 1
 			  }, 600);
 			});
-		} else {
-			$('#home-slide-wrapper').css('opacity', 1);
-		}
-		
+
 		$('#home-slide').flexslider({
 			animation: '<?php echo $img_slide_effect; ?>',
 			direction: '<?php echo $img_slide_direction; ?>',
@@ -84,9 +80,9 @@ $image_slide_type = ( theme_options( 'home', 'img_slide_full_frame' ) == 'on' ) 
 				}, 300, 'easeOutQuad');
 			}
 		});
-				
+
 	});
-//]]>		
+//]]>
 </script>
 
 <!-- End - Home Slide JS -->
@@ -97,10 +93,10 @@ $image_slide_type = ( theme_options( 'home', 'img_slide_full_frame' ) == 'on' ) 
 	<div id="home-slide-wrapper">
 			<div id="home-slide" class="<?php echo $img_slide_effect_direction; ?>">
 				<ul class="slides">
-					<?php 
-						foreach( $slides as $slide ) : 
+					<?php
+						foreach( $slides as $slide ) :
 						$image_id = get_post_meta($slide->ID, 'info_image', true);
-						
+
 						// $resized_image_src = wp_get_attachment_image_src($image_id, 'full');
 						// $resized_image_src = $resized_image_src[0];
 
@@ -111,17 +107,17 @@ $image_slide_type = ( theme_options( 'home', 'img_slide_full_frame' ) == 'on' ) 
 						$caption_title = __(get_post_meta($slide->ID, 'info_caption_title', true));
 						$caption_text = __(get_post_meta($slide->ID, 'info_caption', true));
 						$link = __(get_post_meta($slide->ID, 'info_link', true));
-						
+
 						// Pre-Process
 						$caption_title = ( $link != '' && $caption_title != '' ) ? '<a href="' . $link . '">' . $caption_title  . '</a>' : $caption_title;
-						
+
 						$caption_title_bg_tone = 'slide-caption-bg-' . getDarkLightYIQ( $sitewide_caption_title_bg_color );
 						$caption_style[] = ( $sitewide_caption_title_text_color != '' ) ? 'color:' . $sitewide_caption_title_text_color . ';' : '';
 						$caption_style[] = 'background-color:' . $sitewide_caption_title_bg_color . ';';
 						$caption_title_style = 'style="' . implode( ' ', $caption_style ) . '"';
 					?>
 						<li>
-						
+
 							<img src="<?php echo $resized_image_src; ?>" alt="<?php echo $slide->post_title; ?>" />
 
 							<?php if( $caption_title || $caption_text ): ?>
@@ -136,7 +132,7 @@ $image_slide_type = ( theme_options( 'home', 'img_slide_full_frame' ) == 'on' ) 
 							</div>
 							</div>
 							<?php endif; ?>
-						
+
 						</li>
 					<?php endforeach; ?>
 				</ul>
