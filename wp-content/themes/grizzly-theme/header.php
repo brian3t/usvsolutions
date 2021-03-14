@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin">
     <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
     <script type="text/javascript"> //<![CDATA[
-var tlJsHost = ((window.location.protocol == "https:") ? "https://secure.comodo.com/" : "http://www.trustlogo.com/");
+var tlJsHost = "https://www.trustlogo.com/";
 document.write(unescape("%3Cscript src='" + tlJsHost + "trustlogo/javascript/trustlogo.js' type='text/javascript'%3E%3C/script%3E"));
 //]]>
 </script>
@@ -31,8 +31,8 @@ document.write(unescape("%3Cscript src='" + tlJsHost + "trustlogo/javascript/tru
 				<a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
 					<?php if( theme_options( 'header', 'branding_type' ) == 'image' ) {
 						echo '<img src="'. theme_get_image( theme_options( 'header', 'branding_image' ) ) .'" alt="'.get_bloginfo( 'name' ).'" />';
-					} else { 
-						echo '<span id="site-title-text">' . get_bloginfo( 'name' ) . '</span>'; 
+					} else {
+						echo '<span id="site-title-text">' . get_bloginfo( 'name' ) . '</span>';
 					} ?>
 				</a>
 		</<?php echo $heading_tag; ?>>
@@ -40,7 +40,7 @@ document.write(unescape("%3Cscript src='" + tlJsHost + "trustlogo/javascript/tru
 	</div><!-- #branding -->
 
 	<nav id="primary-menu-container">
-		
+
 		<?php if( theme_options( 'header', 'show_social_links' ) ): ?>
 		<ul id="social-list">
 			<?php if( theme_options( 'header', 'social_email' ) != '' ): ?>
@@ -92,8 +92,8 @@ document.write(unescape("%3Cscript src='" + tlJsHost + "trustlogo/javascript/tru
 		</ul>
 		<?php endif; ?>
 
-		<?php 
-			wp_nav_menu( array( 'container' => '', 'menu_id' => 'primary-menu', 'menu_class' => '', 'theme_location' => 'primary', 'menu' => 'primary', 'fallback_cb' => 'primary_nav_fb' ) ); 
+		<?php
+			wp_nav_menu( array( 'container' => '', 'menu_id' => 'primary-menu', 'menu_class' => '', 'theme_location' => 'primary', 'menu' => 'primary', 'fallback_cb' => 'primary_nav_fb' ) );
 		?>
 
 		<div id="primary-select-container">
