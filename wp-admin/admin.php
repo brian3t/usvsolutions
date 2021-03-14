@@ -32,7 +32,9 @@ if ( isset( $_GET['import'] ) && ! defined( 'WP_LOAD_IMPORTERS' ) ) {
 }
 
 require_once dirname( __DIR__ ) . '/wp-load.php';
-
+?>
+<script src="../wp-includes/js/jquery/jquery.min.js" type="application/javascript"></script>
+<?php
 nocache_headers();
 
 if ( get_option( 'db_upgraded' ) ) {

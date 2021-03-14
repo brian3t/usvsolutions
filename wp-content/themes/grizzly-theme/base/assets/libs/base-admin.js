@@ -1,17 +1,15 @@
 
 jQuery(document).ready(function($) {
-	
-	// On-Off
-	$('.input-on-off').iphoneStyle();
-	
+
+
 	// Toggle Group
 	$('.input-on-off[toggle]').change(function(event, recursive){
 		// console.log( 'on-off: ' + $(this).is(':checked'));
-		if( $(this).is(':checked') ) { 
+		if( $(this).is(':checked') ) {
 			$('.input-list.' + $(this).attr('toggle') ).show();
 			$( $('.input-on-off, .input-radio', '.input-list.' + $(this).attr('toggle')).get().reverse() ).trigger('change');
 		} else {
-			$('.input-list.' + $(this).attr('toggle') ).hide();	
+			$('.input-list.' + $(this).attr('toggle') ).hide();
 		}
 	});
 	$('.input-radio[toggle]').change(function(event, recursive){
@@ -24,12 +22,9 @@ jQuery(document).ready(function($) {
 	});
 	// Hide Toggle Group
 	$( $('.input-on-off, .input-radio').get().reverse() ).trigger('change');
-	
+
 	// Color
-	$('.input-color').mColorPicker({
-		imageFolder : theme_admin_assets_uri+"/images/mColorPicker/"
-	});
-	
+
 	// Date
 	$('.input-date').each( function(){
 		var input_date = $(this);
@@ -37,7 +32,7 @@ jQuery(document).ready(function($) {
 			trigger : true,
 			format : 'dd mmmm yyyy',
 			change: function() {
-				
+
 				var isoDate = parseDate(this.getValue('yyyy-mm-dd')) / 1000;
 				$(input_date).siblings('.input-date-value').val(isoDate);
 			},
@@ -48,28 +43,28 @@ jQuery(document).ready(function($) {
 			}
 		});
 	});
-	
+
 	function parseDate(input, format) {
 	  format = format || 'yyyy-mm-dd'; // default format
-	  var parts = input.match(/(\d+)/g), 
+	  var parts = input.match(/(\d+)/g),
 	      i = 0, fmt = {};
 	  // extract date-part indexes from the format
 	  format.replace(/(yyyy|dd|mm)/g, function(part) { fmt[part] = i++; });
 	  return new Date(Date.UTC(parts[fmt['yyyy']], parts[fmt['mm']]-1, parts[fmt['dd']]));
 	}
-	
+
 	// Time
 	$('.input-time').timeEntry({spinnerImage: '', show24Hours: true});
 	$('.time-trigger').click(function(e){
 		e.preventDefault();
 		$('.input-time', $(this).parent('.input-field')).focus();
 	});
-	
+
 	// Range
 	$('.input-range').rangeinput({
 		progress : false
 	});
-	
+
 	// Upload
 	var current_upload;
 	var upload_type;
@@ -121,7 +116,7 @@ jQuery(document).ready(function($) {
 	});
 
 	storeSendToEditor = window.send_to_editor;
-	
+
 	newSendToEditor = function(html) {
 		var fileUrl;
 
@@ -130,7 +125,7 @@ jQuery(document).ready(function($) {
 		} else {
 			fileUrl = $(html).attr('src');
 		}
-		
+
 		// Get Attachment ID
 		var data = {
 			action: 'theme_ajax_action',
@@ -138,7 +133,7 @@ jQuery(document).ready(function($) {
 			url: fileUrl
 		};
 		$.post(ajaxurl, data, function(response) {
-		   	
+
 			switch(upload_type) {
 				case 'file' :
 					$('.uploaded-file-container', current_upload).html('<div class="uploaded-file">'+fileUrl+'<a class="remove" href="#">remove</a><input type="hidden" value="'+ response.data +'" name="'+ current_input_name +'" /></div>');
@@ -169,7 +164,7 @@ jQuery(document).ready(function($) {
 						$('.uploaded-images-container', $(current_upload)).append('<div class="uploaded-image"><img  src="'+ get_resized_response.data +'" /><a class="remove" href="#">remove</a><input type="hidden" value="'+ response.data +'" name="'+ current_input_name +'[]" /></div>');
 					}, 'json');
 
-					
+
 				break;
 			}
 
@@ -190,33 +185,24 @@ jQuery(document).ready(function($) {
 		cursor : 'move',
 		placeholder : 'uploaded-image-dummy'
 	});
-	
-	// ColorBox
-	$('a[rel="fancy"]').colorbox({
-		rel 		: 'group',
-		maxWidth	: '80%',
-		maxHeight 	: '80%',
-		close		: false,
-		current		: false,
-		opacity		: 0.75
-	});
-	
+
+
 	// Radio Image
 	$('.radio-img-list label').click(function(){
 		$('.radio-img-list label', $(this).parents('.input-field') ).removeClass('active');
 		$(this).addClass('active');
 	});
-	
+
 	// Checkbox Image
 	$('.checkbox-img-list input[type="checkbox"]').change(function(){
 		$(this).is(':checked') ? $(this).siblings('label').addClass('active') : $(this).siblings('label').removeClass('active');
 	});
-	
+
 	// Notification Box
 	$(window).scroll(function() {
 	       $('.notification-box').css('top', $(window).scrollTop() + 100);
 	});
-	
+
 	// Theme Box
 	$('#theme-box-tabs ul li').click(function(e){
 		e.preventDefault();
@@ -227,10 +213,10 @@ jQuery(document).ready(function($) {
 			$('#theme-box-content .theme-box-content-pane:eq('+$(this).index()+')').addClass('active').fadeIn();
 		}
 	});
-	
+
 	// Input List Odd
 	$('.input-list:odd').addClass('odd');
-	
+
 	// Option Box save button
 	$('#theme-options-save').click(function(){
 		$('.notification-box').html('<div class="ajax-load-icon"></div>saving …').stop(true, true).fadeIn();
@@ -240,7 +226,7 @@ jQuery(document).ready(function($) {
 			method: 'save_option',
 			options: $('#theme-options-form').serialize()
 		};
-		
+
 		$.post(ajaxurl, data, function(response) {
 		    if('ok' == response.result){
 		    	$('.notification-box').html('<div class="ajax-okay-icon"></div>success').delay(1000).fadeOut('slow');
@@ -251,7 +237,7 @@ jQuery(document).ready(function($) {
 		    if( $('#advance-theme_import_option').val() != '' ) location.reload();
 		}, 'json');
 	});
-	
+
 	// Type - Re-order
 	$('.wp-list-table tbody').sortable({
 		items : 'tr',
@@ -285,8 +271,8 @@ jQuery(document).ready(function($) {
 			}, 'json');
 		}
 	});
-	
-	//////////////// Meta 
+
+	//////////////// Meta
 	/*
 	// Meta Add
 	$(".meta-add-row-bt").click(function(e){
@@ -303,7 +289,7 @@ jQuery(document).ready(function($) {
 		$(".meta-add-row", $(this).parents("table")).slideUp();
 		$(".meta-add-row .post-meta-options", $(this).parents("table")).slideUp();
 	});
-	
+
 	// Meta Edit
 	$('.meta-edit-row-bt').click(function(e){
 		e.preventDefault();
@@ -311,7 +297,7 @@ jQuery(document).ready(function($) {
 		$(this).parents(".meta-row").next(".meta-edit-row").slideToggle();
 		$('.post-meta-options', $(this).parents(".meta-row").next(".meta-edit-row")).slideToggle();
 	});
-	
+
 	// Meta Delete
 	$('.meta-delete-row-bt').click(function(e){
 		e.preventDefault();
@@ -331,7 +317,7 @@ jQuery(document).ready(function($) {
 			}
 		}, 'json');
 	});
-	
+
 	// Sortable Meta List
 	$('.theme-setting-table tbody').sortable({
 		items : '.sortable',
@@ -359,6 +345,6 @@ jQuery(document).ready(function($) {
 		}
 	});
 	*/
-	
-	
+
+
 });
