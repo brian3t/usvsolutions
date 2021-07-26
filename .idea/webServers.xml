@@ -3,7 +3,7 @@
   <component name="WebServers">
     <option name="servers">
       <webServer id="f056096b-04e9-4b6a-a52f-468ab8f1b693" name="usv" url="https://usvsolutions.com">
-        <fileTransfer rootFolder="/var/www/usv" accessType="SFTP" host="usvsolutions.com" port="22" sshConfigId="0f90e8a7-2657-4876-84da-d81a7896b11b" sshConfig="customer@usvsolutions.com:22 password">
+        <fileTransfer rootFolder="/var/www" accessType="SFTP" host="usvsolutions.com" port="22" sshConfigId="0f90e8a7-2657-4876-84da-d81a7896b11b" sshConfig="usv">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" />
           </advancedOptions>

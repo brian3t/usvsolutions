@@ -8,7 +8,7 @@ iecomadmin
 lib
 mbtestapp
 img
-mwcog
+mwcogj
 pflow
 pledge
 *.log
@@ -26,3 +26,5 @@ tmp
 .idea/*.*
 /lottery/
 gasstations
+/wapi/conf.php
+/vendor/
