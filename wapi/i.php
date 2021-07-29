@@ -5,7 +5,7 @@
  */
 header('Content-Type: application/json');
 
-$http_origin = $_SERVER['HTTP_ORIGIN'];
+$http_origin = $_SERVER['HTTP_ORIGIN'] ?? '';
 if (str_contains($http_origin, 'jslib'))
 {
     header("Access-Control-Allow-Origin: *");
