@@ -1,7 +1,7 @@
 <?php
 /**
  * Web api
- * Send email
+ * Send email using PHPMailer
  * i.php?act=mail&to=sendto&cont=content
  */
 header('Content-Type: application/json');
