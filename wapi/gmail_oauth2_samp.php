@@ -17,7 +17,7 @@ use PHPMailer\PHPMailer\SMTP;
 
 //SMTP needs accurate times, and the PHP time zone MUST be set
 //This should be done in your php.ini, but this is how to do it if you don't have access to that
-date_default_timezone_set('Etc/UTC');
+date_default_timezone_set('America/Los_Angeles');
 
 //Load dependencies from composer
 //If this causes an error, run 'composer install'
@@ -87,15 +87,6 @@ $mail->setOAuth(
 );
 //End Option 1
 
-//Option 2: Another OAuth library as OAuth2 token provider
-//Set up the other oauth library as per its documentation
-//Then create the wrapper class that implementations OAuthTokenProvider
-$oauthTokenProvider = new MyOAuthTokenProvider(/* Email, ClientId, ClientSecret, etc. */);
-
-//Pass the implementation of OAuthTokenProvider to PHPMailer
-$mail->setOAuth($oauthTokenProvider);
-//End Option 2
-
 //Set who the message is to be sent from
 //For gmail, this generally needs to be the same as the user you logged in as
 $mail->setFrom($email, 'wapi gmail oauth2');
@@ -109,7 +100,7 @@ $mail->Subject = 'PHPMailer GMail XOAUTH2 SMTP test';
 //Read an HTML message body from an external file, convert referenced images to embedded,
 //convert HTML into a basic plain-text alternative body
 $mail->CharSet = PHPMailer::CHARSET_UTF8;
-$mail->msgHTML(file_get_contents('contentsutf8.html'), __DIR__);
+$mail->msgHTML(file_get_contents('./contentsutf8.html'), __DIR__);
 
 //Replace the plain text body with one created manually
 $mail->AltBody = 'This is a plain-text message body';
