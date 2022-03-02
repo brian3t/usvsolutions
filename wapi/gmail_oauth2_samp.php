@@ -21,7 +21,7 @@ date_default_timezone_set('America/Los_Angeles');
 
 //Load dependencies from composer
 //If this causes an error, run 'composer install'
-require '../vendor/autoload.php';
+require dirname(__DIR__) . '/vendor/autoload.php';
 
 //Create a new PHPMailer instance
 $mail = new PHPMailer();
@@ -100,7 +100,7 @@ $mail->Subject = 'PHPMailer GMail XOAUTH2 SMTP test';
 //Read an HTML message body from an external file, convert referenced images to embedded,
 //convert HTML into a basic plain-text alternative body
 $mail->CharSet = PHPMailer::CHARSET_UTF8;
-$mail->msgHTML(file_get_contents('./contentsutf8.html'), __DIR__);
+$mail->msgHTML(file_get_contents( __DIR__ . '/contentsutf8.html'), __DIR__);
 
 //Replace the plain text body with one created manually
 $mail->AltBody = 'This is a plain-text message body';

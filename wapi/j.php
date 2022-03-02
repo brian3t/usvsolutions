@@ -1,17 +1,19 @@
 <?php
 /**
  * Web api
- * Send email using PHPMailer
- * i.php?act=mail&to=sendto&cont=content
+ * Send email using Google Oauth
+ * j.php?act=mail&to=sendto&cont=content
  */
 header('Content-Type: application/json');
 
 $http_origin = $_SERVER['HTTP_ORIGIN'] ?? '';
-if (str_contains($http_origin, 'jslib') || str_contains($http_origin, 'craftbelly') || str_contains($http_origin, 'socalapp')) {
+if (str_contains($http_origin, 'jslib') || str_contains($http_origin, 'craftbelly') || str_contains($http_origin, 'socalapp')
+    || str_contains($_SERVER['HTTP_USER_AGENT'], 'PostmanRuntime/')) {
     header("Access-Control-Allow-Origin: *");
+} else {
+    echo 'Not allowed';
+    return 'Not allowed';
 }
-//$remote_addr = $_SERVER['REMOTE_ADDR'] ?? '';
-//echo ("server is " . json_encode($_SERVER));
 
 require_once('../vendor/autoload.php');
 
@@ -26,13 +28,6 @@ if (empty($act)) {
     die();
 }
 $res = [];
-
-/* probing
-$res['stat'] = 1;
-$res['act'] = $act;
-$res['msg'] = 'testing';
-echo json_encode($res);
-*/
 
 /**
  * Action mail
