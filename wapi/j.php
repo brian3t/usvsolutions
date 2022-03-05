@@ -17,6 +17,8 @@ if (str_contains($http_origin, 'jslib') || str_contains($http_origin, 'craftbell
 
 require_once('../vendor/autoload.php');
 
+use League\OAuth2\Client\Provider\Google;
+use PHPMailer\PHPMailer\OAuth;
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 
@@ -57,17 +59,51 @@ if ($act === 'mail') {
     $mail->Mailer = "smtp";
 
     $mail->SMTPDebug = SMTP_DEBUG_LVL;
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
     $mail->SMTPAuth = TRUE;
-    $mail->SMTPSecure = "tls";
-    $mail->Port = 587;
+    $mail->AuthType = 'XOAUTH2';
+    $mail->Port = 465;
     $mail->Host = "smtp.gmail.com";
     $mail->Username = FROM;
     $mail->Password = PW;
 
+//Start Option 1: Use league/oauth2-client as OAuth2 token provider
+//Fill in authentication details here
+//Either the gmail account owner, or the user that gave consent
+    $email = 'someids@gmail.com';
+    $clientId = '861024413633-ika1uldd5q12fih8cr0vjr4gufer88oe.apps.googleusercontent.com';
+    $clientSecret = GMCLIENT_SECRET;
+
+//Obtained by configuring and running get_oauth_token.php
+//after setting up an app in Google Developer Console.
+    $refreshToken = GMREFRESH_TOKEN;
+
+//Create a new OAuth2 provider instance
+    $provider = new Google(
+        [
+            'clientId' => $clientId,
+            'clientSecret' => $clientSecret,
+        ]
+    );
+
+//Pass the OAuth provider instance to PHPMailer
+    $mail->setOAuth(
+        new OAuth(
+            [
+                'provider' => $provider,
+                'clientId' => $clientId,
+                'clientSecret' => $clientSecret,
+                'refreshToken' => $refreshToken,
+                'userName' => $email,
+            ]
+        )
+    );
+//End Option 1
+
     $mail->IsHTML(true);
     $mail->AddAddress($to, $to);
     $mail->SetFrom(FROM, FROM_NAME);
-    $mail->AddBcc("someids@gmail.com", "admin monitor");//asdf
+//    $mail->AddBcc("someids@gmail.com", "admin monitor");//asdf
     $mail->Subject = $subj;
 
 // Send the message
@@ -81,8 +117,6 @@ if ($act === 'mail') {
     } catch (\Exception $e) {
         err($e->getMessage());
     }
-    $a = 1;
-
 }
 
 function err($err_msg) {

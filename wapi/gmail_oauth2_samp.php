@@ -22,7 +22,7 @@ date_default_timezone_set('America/Los_Angeles');
 //Load dependencies from composer
 //If this causes an error, run 'composer install'
 require dirname(__DIR__) . '/vendor/autoload.php';
-
+require_once 'conf.php';
 //Create a new PHPMailer instance
 $mail = new PHPMailer();
 
@@ -59,11 +59,11 @@ $mail->AuthType = 'XOAUTH2';
 //Either the gmail account owner, or the user that gave consent
 $email = 'someids@gmail.com';
 $clientId = '861024413633-ika1uldd5q12fih8cr0vjr4gufer88oe.apps.googleusercontent.com';
-$clientSecret = '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';
+$clientSecret = GMCLIENT_SECRET;
 
 //Obtained by configuring and running get_oauth_token.php
 //after setting up an app in Google Developer Console.
-$refreshToken = '1//06lJ5RS03QcnKCgYIARAAGAYSNwF-L9IryM96yricmSdv-6YyJx8lOdPFI6fpMSMVST6DH89jA5CA2Mz_x1GxqxJLtI_f_b_sdJM';
+$refreshToken = GMREFRESH_TOKEN;
 
 //Create a new OAuth2 provider instance
 $provider = new Google(
