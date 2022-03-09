@@ -7,7 +7,7 @@
 header('Content-Type: application/json');
 
 $http_origin = $_SERVER['HTTP_ORIGIN'] ?? '';
-if (str_contains($http_origin, 'jslib') || str_contains($http_origin, 'craftbelly') || str_contains($http_origin, 'socalapp')
+if (str_contains($http_origin, 'jslib') || str_contains($http_origin, 'craftbelly') || str_contains($http_origin, 'socal')
     || str_contains($_SERVER['HTTP_USER_AGENT'], 'PostmanRuntime/')) {
     header("Access-Control-Allow-Origin: *");
 } else {
