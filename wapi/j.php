@@ -6,12 +6,14 @@
  */
 header('Content-Type: application/json');
 
-$http_origin = $_SERVER['HTTP_ORIGIN'] ?? '';
+$http_origin = $_SERVER['HTTP_ORIGIN'] ?? 'missing_server_http_orig';
+$http_referrer = $_SERVER['HTTP_REFERER'] ?? 'missing_server_http_referrer';
+$remote_addr = $_SERVER['REMOTE_ADDR'] ?? 'missing_server_remoteaddr';
 if (str_contains($http_origin, 'jslib') || str_contains($http_origin, 'craftbelly') || str_contains($http_origin, 'socal')
-    || str_contains($_SERVER['HTTP_USER_AGENT'], 'PostmanRuntime/')) {
+    || str_contains($_SERVER['HTTP_USER_AGENT'], 'PostmanRuntime/') || $remote_addr === '72.220.10.214') {
     header("Access-Control-Allow-Origin: *");
 } else {
-    echo 'Not allowed';
+    echo 'Not allowed. Origin: ' . $http_origin. " Referer: $http_referrer Remoteaddr: $remote_addr";
     return 'Not allowed';
 }
 
