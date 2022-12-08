@@ -3,6 +3,7 @@
  * Web api
  * Send email using Google Oauth
  * j.php?act=mail&to=sendto&cont=content
+ * Require: composer.json: "phpmailer/phpmailer": "^6.6", "league/oauth2-google": "^4.0"
  */
 header('Content-Type: application/json');
 
