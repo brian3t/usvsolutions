@@ -30,3 +30,5 @@ gasstations
 /vendor/
 .idea
 .idea/*
+/mybb/.idea/
+/mybb/.idea/*
